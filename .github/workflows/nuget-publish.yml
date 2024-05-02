@@ -33,13 +33,13 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: ⚙️ Build library
-      run: dotnet build ./Markdig.RtfRenderer/Markdig.RtfRenderer.csproj --configuration Release -p:Version=${{needs.set-env.outputs.BUILD_VERSION}}
+      run: dotnet build ./MarkdigExtensions.RtfRenderer/MarkdigExtensions.RtfRenderer.csproj --configuration Release -p:Version=${{needs.set-env.outputs.BUILD_VERSION}}
       shell: bash
 
     - name: 📦 Pack NuGet Package
-      run: dotnet pack ./Markdig.RtfRenderer/Markdig.RtfRenderer.csproj --configuration Release --output nupkgs -p:Version=${{needs.set-env.outputs.BUILD_VERSION}}
+      run: dotnet pack ./MarkdigExtensions.RtfRenderer/MarkdigExtensions.RtfRenderer.csproj --configuration Release --output nupkgs -p:Version=${{needs.set-env.outputs.BUILD_VERSION}}
       shell: bash
 
     - name: 🎉 Push package to NuGet
-      run: dotnet nuget push "D:/a/Markdig.RtfRenderer/Markdig.RtfRenderer/nupkgs/MarkdigExtensions.RtfRenderer.${{needs.set-env.outputs.BUILD_VERSION}}.nupkg" --api-key  ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push "D:/a/MarkdigExtensions.RtfRenderer/MarkdigExtensions.RtfRenderer/nupkgs/MarkdigExtensions.RtfRenderer.${{needs.set-env.outputs.BUILD_VERSION}}.nupkg" --api-key  ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
       shell: bash
