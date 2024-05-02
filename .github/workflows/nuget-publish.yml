@@ -1,11 +1,10 @@
-name: Publish NuGet Package
+name: Build and Publish NuGet Package
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'  # Dieses Muster sorgt dafür, dass der Workflow nur für Tags ausgelöst wird, die mit 'v' beginnen
   workflow_dispatch:
-      
 
 jobs:
   build:
@@ -13,13 +12,29 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # Wichtig für das Zählen der Commits und Tags
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '5.0.x'
+    
+    - name: Calculate new version
+      id: version
+      run: |
+        echo "Calculating version number..."
+        TAG_COUNT=$(git tag | wc -l)
+        echo "Found $TAG_COUNT existing tags."
+        NEW_VERSION="1.0.$((TAG_COUNT + 1))"
+        echo "New version: $NEW_VERSION"
+        echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
     - name: Build with dotnet
-      run: dotnet build --configuration Release
+      run: dotnet build --configuration Release /p:Version=$NEW_VERSION
+
     - name: Pack with dotnet
-      run: dotnet pack --configuration Release --output nupkgs
+      run: dotnet pack --configuration Release --output nupkgs /p:Version=$NEW_VERSION
+
     - name: Publish to NuGet
       run: dotnet nuget push "./Markdig.RtfRenderer/nupkgs/*.nupkg" --api-key oy2azzqb3gn3jfxxkqfqa542chcexffubiiu5itup6uw2a --source https://api.nuget.org/v3/index.json
