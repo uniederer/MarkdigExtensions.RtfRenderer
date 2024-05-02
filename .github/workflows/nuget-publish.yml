@@ -51,4 +51,4 @@ jobs:
       shell: bash
       
     - name: Publish to NuGet
-      run: dotnet nuget push "./Markdig.RtfRenderer/nupkgs/*.nupkg" --api-key oy2azzqb3gn3jfxxkqfqa542chcexffubiiu5itup6uw2a --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push "./nupkgs/*.nupkg" --api-key oy2azzqb3gn3jfxxkqfqa542chcexffubiiu5itup6uw2a --source https://api.nuget.org/v3/index.json
