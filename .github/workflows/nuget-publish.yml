@@ -18,17 +18,17 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '5.0.x'
+        dotnet-version: '8.0.x'
     
     - name: Calculate new version
-      id: version
       run: |
         echo "Calculating version number..."
-        TAG_COUNT=$(git tag | wc -l)
+        $TAG_COUNT = git tag | Measure-Object | Select-Object -ExpandProperty Count
         echo "Found $TAG_COUNT existing tags."
-        NEW_VERSION="1.0.$((TAG_COUNT + 1))"
+        $NEW_VERSION = "1.0." + ($TAG_COUNT + 1)
         echo "New version: $NEW_VERSION"
         echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
 
     - name: Build with dotnet
       run: dotnet build --configuration Release /p:Version=$NEW_VERSION
