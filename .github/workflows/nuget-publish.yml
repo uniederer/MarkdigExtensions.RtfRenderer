@@ -31,11 +31,11 @@ jobs:
       shell: bash
 
     - name: Build with dotnet
-      run: dotnet build ./Markdig.RtfRenderer/Markdig.RtfRenderer.csproj --configuration Release /p:Version=$NEW_VERSION
+      run: dotnet build ./Markdig.RtfRenderer/Markdig.RtfRenderer.csproj --configuration Release -p:Version=$NEW_VERSION
       shell: bash
 
     - name: Pack with dotnet
-      run: dotnet pack ./Markdig.RtfRenderer/Markdig.RtfRenderer.csproj --configuration Release --output nupkgs /p:Version=$NEW_VERSION
+      run: dotnet pack ./Markdig.RtfRenderer/Markdig.RtfRenderer.csproj --configuration Release --output nupkgs -p:Version=$NEW_VERSION
       shell: bash
 
     - name: Publish to NuGet
