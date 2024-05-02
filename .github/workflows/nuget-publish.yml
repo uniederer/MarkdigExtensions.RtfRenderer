@@ -41,6 +41,16 @@ jobs:
       run: dotnet pack ./MarkdigExtensions.RtfRenderer/MarkdigExtensions.RtfRenderer.csproj --configuration Release --output nupkgs -p:Version=${{needs.set-env.outputs.BUILD_VERSION}}
       shell: bash
 
+    - name: ✓ Craft release v${{needs.set-env.outputs.BUILD_VERSION}}
+      uses: ncipollo/release-action@v1
+      with:
+        name: v${{needs.set-env.outputs.BUILD_VERSION}}
+        artifacts: "MarkdigExtensions.RtfRenderer/MarkdigExtensions.RtfRenderer/nupkgs/MarkdigExtensions.RtfRenderer.${{needs.set-env.outputs.BUILD_VERSION}}.nupkg"
+        allowUpdates: true
+        replacesArtifacts: true
+        draft: false
+        prerelease: false
+        
     - name: 🎉 Push package to NuGet
       run: dotnet nuget push "D:/a/MarkdigExtensions.RtfRenderer/MarkdigExtensions.RtfRenderer/nupkgs/MarkdigExtensions.RtfRenderer.${{needs.set-env.outputs.BUILD_VERSION}}.nupkg" --api-key  ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
       shell: bash
