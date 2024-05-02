@@ -41,7 +41,7 @@ jobs:
     - name: Print working directory
       run: pwd
       shell: bash
-      
-    - name: Publish to NuGet
-      run: dotnet nuget push "./nupkgs/*.nupkg" --api-key oy2azzqb3gn3jfxxkqfqa542chcexffubiiu5itup6uw2a --source https://api.nuget.org/v3/index.json
+
+    - name: Push package to NuGet
+      run: dotnet nuget push "D:/a/Markdig.RtfRenderer/Markdig.RtfRenderer/nupkgs/MarkdigExtensions.RtfRenderer.${{ env.NEW_VERSION }}.nupkg" --api-key oy2azzqb3gn3jfxxkqfqa542chcexffubiiu5itup6uw2a --source https://api.nuget.org/v3/index.json
       shell: bash
