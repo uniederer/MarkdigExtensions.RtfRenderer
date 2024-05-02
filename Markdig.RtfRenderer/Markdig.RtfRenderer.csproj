@@ -6,6 +6,7 @@
     <Description>Markdig.RtfRenderer is a rendering extension for the popular Markdig Markdown processor, specifically designed to convert Markdown documents into Rich Text Format (RTF). This extension enables developers to easily integrate Markdown-to-RTF conversion in their .NET applications, facilitating the creation of RTF documents that retain the styling and structure defined in Markdown syntax. Ideal for applications requiring document exports in formats compatible with word processors, Markdig.RtfRenderer extends the flexibility of the Markdig library, making it a valuable tool for content management systems, documentation tools, and any software needing robust text formatting capabilities.</Description>
     <RepositoryUrl>https://github.com/uniederer/Markdig.RtfRenderer</RepositoryUrl>
     <PackageId>MarkdigExtensions.RtfRenderer</PackageId>
+	<Version>$(Version)</Version>
   </PropertyGroup>
 
   <ItemGroup>
