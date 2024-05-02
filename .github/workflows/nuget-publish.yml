@@ -18,6 +18,7 @@ jobs:
       BUILD_VERSION: ${{env.BUILD_VERSION}}
       
   build:
+    name: ⚙️ Build and publish library
     runs-on: windows-latest
     needs: set-env
 
