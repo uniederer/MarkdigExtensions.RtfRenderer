@@ -48,7 +48,7 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         name: v${{needs.set-env.outputs.BUILD_VERSION}}
-        artifacts: ./MarkdigExtensions.RtfRenderer/MarkdigExtensions.RtfRenderer/nupkgs/MarkdigExtensions.RtfRenderer.${{needs.set-env.outputs.BUILD_VERSION}}.nupkg
+        artifacts: D:/a/MarkdigExtensions.RtfRenderer/MarkdigExtensions.RtfRenderer/nupkgs/MarkdigExtensions.RtfRenderer.${{needs.set-env.outputs.BUILD_VERSION}}.nupkg
         allowUpdates: true
         replacesArtifacts: true
         draft: false
