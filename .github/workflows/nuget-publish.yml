@@ -34,21 +34,14 @@ jobs:
       run: dotnet build ./Markdig.RtfRenderer/Markdig.RtfRenderer.csproj --configuration Release -p:Version=$NEW_VERSION
       shell: bash
 
-    - name: Print working directory
-      run: pwd
-      shell: bash
-
-    - name: List packages
-      run: ls ./Markdig.RtfRenderer/nupkgs
-      shell: bash
-
-    - name: List output directory
-      run: ls ./Markdig.RtfRenderer/nupkgs
-      shell: bash
-
     - name: Pack with dotnet
       run: dotnet pack ./Markdig.RtfRenderer/Markdig.RtfRenderer.csproj --configuration Release --output nupkgs -p:Version=$NEW_VERSION
       shell: bash
 
-    - name: Publish to NuGet
-      run: dotnet nuget push "./Markdig.RtfRenderer/nupkgs/*.nupkg" --api-key oy2azzqb3gn3jfxxkqfqa542chcexffubiiu5itup6uw2a --source https://api.nuget.org/v3/index.json
+    - name: Print working directory
+      run: pwd
+      shell: bash
+
+    - name: Push package to NuGet
+      run: dotnet nuget push "D:/a/Markdig.RtfRenderer/Markdig.RtfRenderer/nupkgs/MarkdigExtensions.RtfRenderer.${{ env.NEW_VERSION }}.nupkg" --api-key oy2azzqb3gn3jfxxkqfqa542chcexffubiiu5itup6uw2a --source https://api.nuget.org/v3/index.json
+      shell: bash
