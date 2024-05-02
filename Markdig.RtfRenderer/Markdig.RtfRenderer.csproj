@@ -7,7 +7,7 @@
     <RepositoryUrl>https://github.com/uniederer/Markdig.RtfRenderer</RepositoryUrl>
     <PackageId>MarkdigExtensions.RtfRenderer</PackageId>
 	<Version>$(Version)</Version>
-	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
