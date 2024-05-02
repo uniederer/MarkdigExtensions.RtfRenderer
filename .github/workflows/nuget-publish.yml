@@ -6,6 +6,9 @@ on:
       - 'release/**'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   set-env:
     name: ⚛ Create Environment
@@ -21,7 +24,7 @@ jobs:
     name: ⚙️ Build and publish library
     runs-on: windows-latest
     needs: set-env
-
+      
     steps:
     - name: 🚚 Get v${{needs.set-env.outputs.BUILD_VERSION}} code
       uses: actions/checkout@v2
