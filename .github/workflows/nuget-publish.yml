@@ -34,6 +34,10 @@ jobs:
       run: dotnet build ./Markdig.RtfRenderer/Markdig.RtfRenderer.csproj --configuration Release -p:Version=$NEW_VERSION
       shell: bash
 
+    - name: Print working directory
+      run: pwd
+      shell: bash
+
     - name: List packages
       run: ls ./Markdig.RtfRenderer/nupkgs
       shell: bash
