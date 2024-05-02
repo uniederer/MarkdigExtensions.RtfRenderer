@@ -31,10 +31,12 @@ jobs:
 
 
     - name: Build with dotnet
-      run: dotnet build --configuration Release /p:Version=$NEW_VERSION
+      run: dotnet build --configuration Release /p:Version=${{ env.NEW_VERSION }}
+      shell: powershell
 
     - name: Pack with dotnet
-      run: dotnet pack --configuration Release --output nupkgs /p:Version=$NEW_VERSION
+      run: dotnet pack --configuration Release --output nupkgs /p:Version=${{ env.NEW_VERSION }}
+      shell: powershell
 
     - name: Publish to NuGet
       run: dotnet nuget push "./Markdig.RtfRenderer/nupkgs/*.nupkg" --api-key oy2azzqb3gn3jfxxkqfqa542chcexffubiiu5itup6uw2a --source https://api.nuget.org/v3/index.json
