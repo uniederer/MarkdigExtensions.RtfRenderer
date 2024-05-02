@@ -41,14 +41,6 @@ jobs:
     - name: Print working directory
       run: pwd
       shell: bash
-
-    - name: List packages
-      run: ls ./Markdig.RtfRenderer/nupkgs
-      shell: bash
-
-    - name: List output directory
-      run: ls ./Markdig.RtfRenderer/nupkgs
-      shell: bash
       
     - name: Publish to NuGet
       run: dotnet nuget push "./nupkgs/*.nupkg" --api-key oy2azzqb3gn3jfxxkqfqa542chcexffubiiu5itup6uw2a --source https://api.nuget.org/v3/index.json
