@@ -1,7 +1,7 @@
 ﻿using Markdig.Syntax.Inlines;
 using Markdig.Renderers;
 
-namespace Markdig.RtfRenderer.Inline
+namespace MarkdigExtensions.RtfRenderer.Inline
 {
     public class EmphasisInlineRenderer : MarkdownObjectRenderer<RtfRenderer, EmphasisInline>
     {

@@ -2,7 +2,7 @@
 using Markdig.Syntax;
 using Markdig.Syntax.Inlines;
 
-namespace Markdig.RtfRenderer.Inline
+namespace MarkdigExtensions.RtfRenderer.Inline
 {
     public class LiteralInlineRenderer : MarkdownObjectRenderer<RtfRenderer, LiteralInline>
     {

@@ -1,9 +1,9 @@
 ﻿using Markdig.Renderers;
-using Markdig.RtfRenderer.Block;
-using Markdig.RtfRenderer.Inline;
+using MarkdigExtensions.RtfRenderer.Block;
+using MarkdigExtensions.RtfRenderer.Inline;
 using System.IO;
 
-namespace Markdig.RtfRenderer
+namespace MarkdigExtensions.RtfRenderer
 {
     public class RtfRenderer : TextRendererBase<RtfRenderer>
     {

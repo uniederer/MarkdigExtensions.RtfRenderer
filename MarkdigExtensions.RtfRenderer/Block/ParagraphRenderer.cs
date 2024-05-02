@@ -1,7 +1,7 @@
 ﻿using Markdig.Syntax;
 using Markdig.Renderers;
 
-namespace Markdig.RtfRenderer.Block
+namespace MarkdigExtensions.RtfRenderer.Block
 {
     public class ParagraphRenderer : MarkdownObjectRenderer<RtfRenderer, ParagraphBlock>
     {
