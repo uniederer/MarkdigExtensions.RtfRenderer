@@ -41,5 +41,5 @@ jobs:
       shell: bash
 
     - name: 🎉 Push package to NuGet
-      run: dotnet nuget push "D:/a/Markdig.RtfRenderer/Markdig.RtfRenderer/nupkgs/MarkdigExtensions.RtfRenderer.v${{needs.set-env.outputs.BUILD_VERSION}}.nupkg" --api-key  ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push "D:/a/Markdig.RtfRenderer/Markdig.RtfRenderer/nupkgs/MarkdigExtensions.RtfRenderer.${{needs.set-env.outputs.BUILD_VERSION}}.nupkg" --api-key  ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
       shell: bash
