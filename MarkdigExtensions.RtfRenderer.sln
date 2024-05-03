@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkdigExtensions.RtfRenderer", "MarkdigExtensions.RtfRenderer\MarkdigExtensions.RtfRenderer.csproj", "{6A2BF40F-9AB4-44B6-B105-D94928D77E70}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkdigExtensions.RtfRenderer.Demo", "MarkdigExtensions.RtfRenderer.Demo\MarkdigExtensions.RtfRenderer.Demo.csproj", "{33B36927-1D7B-4CF1-B56E-189D7A69664F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6A2BF40F-9AB4-44B6-B105-D94928D77E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A2BF40F-9AB4-44B6-B105-D94928D77E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A2BF40F-9AB4-44B6-B105-D94928D77E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B36927-1D7B-4CF1-B56E-189D7A69664F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B36927-1D7B-4CF1-B56E-189D7A69664F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B36927-1D7B-4CF1-B56E-189D7A69664F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B36927-1D7B-4CF1-B56E-189D7A69664F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
