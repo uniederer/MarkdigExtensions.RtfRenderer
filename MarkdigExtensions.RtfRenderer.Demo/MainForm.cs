@@ -12,7 +12,7 @@ namespace MarkdigExtensions.RtfRenderer.Demo
 
         private void MarkDown_TextChanged(object sender, EventArgs e)
         {
-            var src = sender as TextBox;
+            var src = sender as TextBox; 
 
             if (src == null)
             {

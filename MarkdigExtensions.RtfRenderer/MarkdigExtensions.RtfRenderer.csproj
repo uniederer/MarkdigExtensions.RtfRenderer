@@ -9,6 +9,7 @@
 	<Version>$(Version)</Version>
 	<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	  <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

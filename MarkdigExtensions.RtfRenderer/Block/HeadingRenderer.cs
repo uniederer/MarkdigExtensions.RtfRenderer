@@ -7,10 +7,22 @@ namespace MarkdigExtensions.RtfRenderer.Block
     {
         protected override void Write(RtfRenderer renderer, HeadingBlock obj)
         {
-            var sizeTag = obj.Level == 1 ? "{\\fs36 " : "{\\fs24 "; // Einfaches Beispiel für zwei Größen
-            renderer.WriteStartTag(sizeTag);
+            RtfMarkup markup = GetMarkupForLevel(renderer, obj.Level);
+            renderer.WriteStartTag(markup.Start);
             renderer.WriteLeafInline(obj);
-            renderer.WriteEndTag("\\par}");
+            renderer.WriteEndTag(markup.End);
+        }
+
+        private static RtfMarkup GetMarkupForLevel(RtfRenderer renderer, int level)
+        {
+            var markupIndex = level - 1;
+
+            if (markupIndex >= renderer.HeadingMarkup.Length)
+            {
+                markupIndex = renderer.HeadingMarkup.Length - 1;
+            }
+
+            return renderer.HeadingMarkup[markupIndex];
         }
     }
 }

@@ -7,6 +7,13 @@ namespace MarkdigExtensions.RtfRenderer
 {
     public class RtfRenderer : TextRendererBase<RtfRenderer>
     {
+        public RtfMarkup[] HeadingMarkup { get; init; } = new RtfMarkup[] {
+              new RtfMarkup("{\\fs36{\\b ", "\\par}}")
+            , new RtfMarkup("{\\fs24{\\b ", "\\par}}")
+            , new RtfMarkup("{\\fs20{\\b ", "\\par}}")
+            , new RtfMarkup("{\\fs20{\\i ", "\\par}}")
+        };
+
         public RtfRenderer(TextWriter writer) : base(writer)
         {
             // Add all supported renderers
